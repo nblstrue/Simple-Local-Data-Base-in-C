@@ -6,7 +6,7 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 
 ---
 
-## 🚧 Update V1.1
+## 🚧 Update V1.1 (in coming)
 
 * Function `find_info` in the works
 * Verification of all the functions
