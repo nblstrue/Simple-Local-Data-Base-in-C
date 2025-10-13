@@ -11,6 +11,7 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 * Function `find_info` in the works
 * Verification of all the functions
 * New features in coming depending on the tests
+* Function `recup_infos`: the number variable isnt verified
 
 ## ✨ Features / Fonctionnalités
 
