@@ -129,7 +129,3 @@ Possible ideas / Idées possibles :
 ## 📜 License / Licence
 
 This project is licensed under the MIT License / Ce projet est sous licence MIT
-
-Si tu veux, je peux te faire une **version encore plus “GitHub-friendly”** avec des badges en haut pour License, Last Update et Status, pour que ton README soit super pro et visuel.
-
-Veux‑tu que je fasse ça ?
