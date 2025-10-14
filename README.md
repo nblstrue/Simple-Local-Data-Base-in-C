@@ -9,7 +9,7 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 ## 🚧 Update V1.1 (in coming)
 
 * Function `find_info` in the works
-* (Done) Verification of all the functions
+* Could only add two people to the file
 * New features in coming depending on the tests
 * (Done) Function `delete_file`: was deleting the file even when saying no
 * (Done) Fucntion 'show_info': cant read the file when the program was just launched, even if the file has content
