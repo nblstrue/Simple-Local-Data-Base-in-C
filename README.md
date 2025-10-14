@@ -12,6 +12,7 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 * Verification of all the functions
 * New features in coming depending on the tests
 * Function `delete_file`: was deleting the file even when saying no
+* Fucntion 'show_info': cant read the file when the program was just launched, even if the file has content
 
 ## ✨ Features / Fonctionnalités
 
