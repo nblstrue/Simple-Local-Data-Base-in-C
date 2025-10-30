@@ -6,26 +6,29 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 
 ---
 
-## Update V1.0.5 - The Day 1 Update
+## 🚧 Updates and Roadmap of the Project
+
+
+### Update V1.0.5 - The Day 1 Update
 
 * (Done) Could only add two people to the file
 * (Done) Function `delete_file`: was deleting the file even when saying no
 * (Done) Fucntion 'show_info': cant read the file when the program was just launched, even if the file has content
 
-## 🚧 Update V1.1 - Searching 'n Looking (End of November 2025)
+### Update V1.1 - Searching 'n Looking (End of November 2025)
 
 * Function `find_info` in the works
 
-## 🚧 Update V1.2 - Overhaul of the Project (December 2025)
+### Update V1.2 - Overhaul of the Project (December 2025)
 
 * Adding new functions for better control over the local data base
 * Quality of life updates (updating ways of coding, small errors)
 
-## 🚧 Update V1.3 - A Local Web (January 2026)
+### Update V1.3 - A Local Web (January 2026)
 
 * Create a local website linked to the local data base (Probably with a microchip or entirely Local to the files in the pc)
 
-## 🚧 Update V2 - A Cool Local Interface (January 2026)
+### Update V2 - A Cool Local Interface (January 2026)
 
 * Using Raylib 5.0 to completely change the looks for the project
 
