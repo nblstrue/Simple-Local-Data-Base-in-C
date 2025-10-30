@@ -21,7 +21,7 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 
 ### Update V1.2 - Overhaul of the Project (December 2025)
 
-* Adding new functions for better control over the local data base
+* Function 'modify_people' in the works (modify a single information from a person)
 * Quality of life updates (updating ways of coding, small errors)
 
 ### Update V1.3 - A Local Web (January 2026)
