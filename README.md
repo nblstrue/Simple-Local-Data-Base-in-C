@@ -15,9 +15,9 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 * (Done) Function `delete_file`: was deleting the file even when saying no
 * (Done) Fucntion 'show_info': cant read the file when the program was just launched, even if the file has content
 
-### Update V1.1 - Searching 'n Looking (End of November 2025)
+### Update V1.1 - Searching 'n Looking (30/10/2025)
 
-* Function `find_info` in the works
+* (done) Function `find_info` in the works (bool type used in the wrong way)
 
 ### Update V1.2 - Overhaul of the Project (December 2025)
 
