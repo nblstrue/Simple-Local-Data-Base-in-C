@@ -16,7 +16,7 @@
 #define STRUCT_ARGUMENTS 6
 
 typedef char CHAR50[50];
-typedef enum {true, false} bool;
+typedef enum {false, true} bool; // false = 0 and true = 1
 typedef struct {
     int age;
     CHAR50 firstname;
@@ -59,9 +59,9 @@ void send_infos(Person *p, FILE* f)
     fflush(f);
 }
 
-/*void find_info(FILE *f, Person *p)
+void find_info(FILE *f, Person *p)
 {
-    char text[50];
+    CHAR50 text;
     bool found = false;
 
     printf("\nEntrez l'information à rechercher:\n-> ");
@@ -96,8 +96,7 @@ void send_infos(Person *p, FILE* f)
     {
         printf("\nAucune personne trouvée pour '%s'.\n", text);
     }
-}*/
-
+}
 
 void delete_file(FILE *f)
 {
@@ -176,7 +175,7 @@ char menu(FILE* fichier, Person *p)
     printf("\n\n ---> Que voulez-vous faire ? (a/l/q) <---");
     printf("\na. Ajouter une personne");
     printf("\nl. Lire le fichier");
-    //printf("\nc. Chercher une personne a partir d'une information");
+    printf("\nc. Chercher une personne a partir d'une information");
     printf("\ns. Supprimer les données");
     printf("\nq. Quitter");
     printf("\nVotre choix:"); scanf(" %c", &c); while (getchar() != '\n');
@@ -187,7 +186,7 @@ char menu(FILE* fichier, Person *p)
         printf("\n\n ---> Que voulez-vous faire ? (a/l/s/q) <---");
         printf("\na. Ajouter une personne");
         printf("\nl. Lire le fichier");
-        //printf("\nc. Chercher une personne a partir d'une information");
+        printf("\nc. Chercher une personne a partir d'une information");
         printf("\ns. Supprimer les données");
         printf("\nq. Quitter");
         printf("\nVotre choix: "); scanf(" %c", &c); while (getchar() != '\n');
@@ -204,8 +203,8 @@ char menu(FILE* fichier, Person *p)
         case 's': delete_file(fichier);
                   break;
 
-        /*case 'c': find_info(fichier, p);
-                  break;*/
+        case 'c': find_info(fichier, p);
+                  break;
 
         default:  printf("\n\nNous vous remercions d'avoir utilise notre programme ! A bientot !\n\n");
                   break;
