@@ -19,12 +19,16 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 
 * (done) Function `find_info` in the works (bool type used in the wrong way)
 
-### Update V1.5 - Overhaul of the Project (December 2025)
+### Update V1.2 - Overhaul of the Project (December 2025)
 
-* Function 'modify_people', 'orga_people', 'pick_info', 'total_people' in the works (modify a single information from a person)
 * Will be using a struct array to store people in memory before writing them to the file
-* Quality of life updates (updating ways of coding, small errors)
-* 
+* Overhaul of all the functions:
+*  -> recup_infos (adding Income, weight, height, job title, address)
+*  -> send_infos (last function sending the full content of TABLE_PERSONS to the file)
+*  -> show_infos (displaying all the content of TABLE_PERSONS in the console)
+*  -> find_info (searching for a person in TABLE_PERSONS by any of their information)
+*  -> delete_data (erasing all the content of the struct array and the file content)
+* Quality of life updates (updating ways of coding, small errors) 
 ### Update V2 - A Cool Local Interface (January 2026)
 
 * Using Raylib 5.0 to completely change the looks for the project
