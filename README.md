@@ -19,15 +19,12 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 
 * (done) Function `find_info` in the works (bool type used in the wrong way)
 
-### Update V1.2 - Overhaul of the Project (December 2025)
+### Update V1.5 - Overhaul of the Project (December 2025)
 
-* Function 'modify_people' in the works (modify a single information from a person)
+* Function 'modify_people', 'orga_people', 'pick_info', 'total_people' in the works (modify a single information from a person)
+* Will be using a struct array to store people in memory before writing them to the file
 * Quality of life updates (updating ways of coding, small errors)
-
-### Update V1.3 - A Local Web (January 2026)
-
-* Create a local website linked to the local data base (Probably with a microchip or entirely Local to the files in the pc)
-
+* 
 ### Update V2 - A Cool Local Interface (January 2026)
 
 * Using Raylib 5.0 to completely change the looks for the project
@@ -95,45 +92,15 @@ gcc -o contact_manager main.c
 At launch, the program displays a menu / Au lancement, le programme affiche un menu :
 
 ```
-a. ➕ Add a person / Ajouter une personne
-l. 📖 Read file / Lire le fichier
-s. 🗑️ Delete data / Supprimer les données
-q. ❌ Quit / Quitter
+(in coming when the overhaul is finished)
 ```
-
-* **a** : Enter a person’s information and add it to the file / saisie des informations d’une personne et ajout au fichier
-* **l** : Display all people in the file / affichage de toutes les personnes présentes dans le fichier
-* **s** : Delete all data in the file / suppression complète des données dans le fichier
-* **q** : Quit the program / quitter le programme
-
 ---
 
 ## 💡 Example / Exemple
 
 ```
---> What do you want to do? (a/l/s/q)
-a
-Enter first name: John
-Enter last name: Doe
-Enter job: Developer
-Enter phone number: 0123456789
-Enter email: john.doe@example.com
-Enter age: 30
---> Person added successfully! ✅
+(in coming whent the overhaul is finished)
 ```
-
-```
---> Que voulez-vous faire ? (a/l/s/q)
-a
-Entrez votre prénom : John
-Entrez votre nom de famille : Doe
-Entrez votre métier : Développeur
-Entrez votre numéro de téléphone : 0123456789
-Entrez votre email : john.doe@example.com
-Entrez votre âge : 30
---> Personne ajoutée avec succès ! ✅
-```
-
 ---
 
 ## 🤝 Contribution / Contribution
