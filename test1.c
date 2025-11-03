@@ -1,237 +1,139 @@
 /*---------------------------------------------------------VERSION FRANCAISE---------------------------------------------------------------*/
 /*
- * *## 🚧 Mise à jour V1.1
+ * ## Update V1.2 - Overhaul of the Project (December 2025)
  *
- * La fonction `find_info` est en cours de développement
- * Vérification de toutes les fonctions
- * Nouvelles fonctionnalités à venir en fonction des tests
- * Fonction `delete_file` : supprimait le fichier même en disant non
- * Optimisation des espaces vides
- * */
+ * Will be using a struct array to store people in memory before writing them to the file
+ * Overhaul of all the functions
+ *  * recup_infos (adding Income, weight, height, job title, address)
+ *  * send_infos (last function sending the full content of TABLE_PERSONS to the file)
+ *  * show_infos (displaying all the content of TABLE_PERSONS in the console)
+ *  * find_info (searching for a person in TABLE_PERSONS by any of their information)
+ *  * delete_data (erasing all the content of the struct array and the file content)
+ * Quality of life updates (updating ways of coding, small errors)
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define FILENAME "saveInfos.txt" // a trouver dans le dossier où se trouve 'test1.c'
+#define FILENAME "saveInfos.txt" // within the same folder as the executable
 #define STRUCT_ARGUMENTS 6
+#define MAX_PERSON 99
 
 typedef char CHAR50[50];
 typedef enum {false, true} bool; // false = 0 and true = 1
 typedef struct {
-    int age;
+    int    age;
+    float  income;
+    float  weight;
+    float  height;
+    CHAR50 address;
     CHAR50 firstname;
     CHAR50 lastname;
     CHAR50 job;
     CHAR50 number;
     CHAR50 email;
+    CHAR50 address;
 } Person;
+Person TABLE_PERSONS[MAX_PERSON];
+int position_table = 0;
 
 void line_break(char *str)
 {
-    str[strcspn(str, "\n")] = '\0'; // supprime le '\n' final si présent
+    str[strcspn(str, "\n")] = '\0'; // Removes the line break character from the string
 }
 
-void show_infos(FILE* f)
+void show_infos()
 {
-    Person p;
-    int info_count = 0;
-    rewind(f); // remet le curseur au début du fichier
-
-    while (fscanf(f, "%s %s %d %s %s %s\n", p.firstname, p.lastname, &p.age, p.job, p.number, p.email) == 6)
-    {
-        printf("\nPrenom et Nom: %s %s\nÂge: %d\nMétier: %s\nNuméro: %s\nEmail: %s\n", p.firstname, p.lastname, p.age, p.job, p.number, p.email);
-        info_count++;
-    }
-    if(info_count == 0)
-        printf("\n\nLe fichier est vide");
+    /*
+       -> Take all the data from the struct array and display it in the console
+     */
 }
 
-void send_infos(Person *p, FILE* f)
+void send_infos()
 {
-    fseek(f, 0, SEEK_END);
-    fprintf(f, "%s %s %d %s %s %s\n",
-            p->firstname,
-            p->lastname,
-            p->age,
-            p->job,
-            p->number,
-            p->email);
-    fflush(f);
+    /*
+       -> Take all the data from the struct array and write it to the file
+     */
+}
+
+void create_person()
+{
+    /*
+       -> Ask the user for all the information about a person
+       -> Store the information in the struct array
+     */
 }
 
 void find_info(FILE *f, Person *p)
 {
     CHAR50 text;
     bool found = false;
-
-    printf("\nEntrez l'information à rechercher:\n-> ");
-    fgets(text, sizeof(text), stdin); line_break(text);
-    while (text[0] == '\0')
-    {
-        printf("\n\nERROR: string is empty");
-        printf("\nSi vous acces à une information qui est lie a ce que vous chercher, veillez l'ecrire ci-dessous\n-> ");
-        fgets(text, sizeof(text), stdin); line_break(text);
-    }
-
-    rewind(f);
-    while (fscanf(f, "%s %s %d %s %s %s\n", p->firstname, p->lastname, &p->age, p->job, p->number, p->email) == 6)
-    {
-        if (atoi(text) == p->age ||
-            strcmp(text, p->email) == 0 ||
-            strcmp(text, p->firstname) == 0 ||
-            strcmp(text, p->lastname) == 0 ||
-            strcmp(text, p->job) == 0 ||
-            strcmp(text, p->number) == 0)
-        {
-            found = true;
-            break;
-        }
-    }
-    if (found)
-    {
-        printf("\n\nLa personne ratachee a l'information donnee ( %s ) a ete trouvee:\n", text);
-        printf("\nPrenom et Nom: %s %s\nÂge: %d\nMétier: %s\nNuméro: %s\nEmail: %s\n", p->firstname, p->lastname, p->age, p->job, p->number, p->email);
-    }
-    else
-    {
-        printf("\nAucune personne trouvée pour '%s'.\n", text);
-    }
+    /*
+       -> Ask the user for a search term (name, firstname, job, number, email)
+       -> Search through the struct array for matching entries
+       -> Display the found entries
+     */
 }
 
 void delete_file(FILE *f)
 {
     char c;
 
-    printf("\n\nEtes vous sur de votre choix ? (o/n)(Les donnees seront TOUTES ecrasees mais le fichier restera existant)\n");
+    printf("\n\nAre you sure to erase ALL the content of the database ? (o/y) You wont be able to retrieve the data after this)\n");
     scanf(" %c", &c); while(getchar() != '\n');
     while(c != 'o' && c != 'n')
     {
         printf("\n\nERROR: invalid input value for choice (choice = %c)", c);
-        printf("\n\nEtes vous sur de votre choix ? (o/n)(Les donnees seront TOUTES ecrasees mais le fichier restera existant)\n");
+        printf("\n\nAre you sure to erase ALL the content of the database ? (o/y) You wont be able to retrieve the data after this\n");
         scanf(" %c", &c); while(getchar() != '\n');
     }
 
     if(c == 'o')
     {
-        f = freopen("saveInfos.txt", "w", f); // remplace l’ancien FILE* par un nouveau vide
+        f = freopen(FILENAME, "w", f);
         if (!f) {
-            perror("Erreur lors de la réouverture du fichier");
+            perror("ERROR: Could not open the new file after erasing the old data");
         }
         else
         {
-            printf("\n\n---> Donnees ecrasees avec success <---");
+            for(int i = 0; i < STRUCT_ARGUMENTS; i++)
+            {
+                TABLE_PERSONS[i] = (Person){0};
+            }
+            printf("\n\n---> Data successfully erased <---");
         }
     }
     else
     {
-        printf("\n\n---> Suppression annulee <---");
+        printf("\n\n---> Data erasure cancelled <---");
     }
 }
 
 Person recup_infos()
 {
-    Person p;
-    int result;
-    printf("Nous allons recuperer vos informations personnelles (50 caractères max par champ).\n");
-
-    printf("Entrez votre prénom : ");
-    fgets(p.firstname, sizeof(p.firstname), stdin);
-    line_break(p.firstname); //enpèche 'fgets' de copier les sauts de lignes
-
-    printf("Entrez votre nom de famille : ");
-    fgets(p.lastname, sizeof(p.lastname), stdin);
-    line_break(p.lastname);
-
-    printf("Entrez votre métier : ");
-    fgets(p.job, sizeof(p.job), stdin);
-    line_break(p.job);
-
-    printf("Entrez votre numéro de téléphone: ");
-    fgets(p.number, sizeof(p.number), stdin);
-    line_break(p.number);
-
-    printf("Entrez votre email : ");
-    fgets(p.email, sizeof(p.email), stdin);
-    line_break(p.email);
-
-    printf("Entrez votre âge : ");
-    result = scanf("%d", &p.age);
-    while (getchar() != '\n'); // vide le buffer
-
-    while(result != 1)
-    {
-        printf("ERROR: invalid input type given to an variable (age = %d)\n\n", p.age);
-        printf("Entrez votre âge : ");
-        result = scanf("%d", &p.age);
-        while (getchar() != '\n'); // vide le buffer
-    }
-
-    return p;
+    /*
+       -> Take the infomations from the file and store them in the struct array
+     */
 }
 
-char menu(FILE* fichier, Person *p)
+void menu(FILE* fichier, Person *p)
 {
-    char c;
-    printf("\n\n ---> Que voulez-vous faire ? (a/l/q) <---");
-    printf("\na. Ajouter une personne");
-    printf("\nl. Lire le fichier");
-    printf("\nc. Chercher une personne a partir d'une information");
-    printf("\ns. Supprimer les données");
-    printf("\nq. Quitter");
-    printf("\nVotre choix:"); scanf(" %c", &c); while (getchar() != '\n');
-
-    while(c != 'a' && c != 'l' && c != 'q' && c != 's' && c != 'c')
-    {
-        printf("\n\nERROR: invalid input for choice ( variable: %c )", c);
-        printf("\n\n ---> Que voulez-vous faire ? (a/l/s/q) <---");
-        printf("\na. Ajouter une personne");
-        printf("\nl. Lire le fichier");
-        printf("\nc. Chercher une personne a partir d'une information");
-        printf("\ns. Supprimer les données");
-        printf("\nq. Quitter");
-        printf("\nVotre choix: "); scanf(" %c", &c); while (getchar() != '\n');
-    }
-    switch (c)
-    {
-        case 'a': *p = recup_infos();
-                  send_infos(p, fichier);
-                  break;
-
-        case 'l': show_infos(fichier);
-                  break;
-
-        case 's': delete_file(fichier);
-                  break;
-
-        case 'c': find_info(fichier, p);
-                  break;
-
-        default:  printf("\n\nNous vous remercions d'avoir utilise notre programme ! A bientot !\n\n");
-                  break;
-    }
-
-    return c;
+   /*
+    * The user should be able to choose between:
+      -> Adding a person
+      -> Displaying all persons
+      -> Searching for a person
+      -> Deleting all data
+      -> Modifying a person's information
+      -> Quitting the program
+    */
 }
 
 int main()
 {
-    char choice;
-    FILE* f = fopen(FILENAME, "a+");
-    Person client;
-
-    while(choice != 'q')
-        choice = menu(f, &client);
-    
-    fclose(f);
+    /*
+       -> Create the file if it doesnt exist, or upload the content existing from the file to the struct array
+       -> then do a loop of the menu until the user wants to quit
+     */
     return 0;
 }
-
-/*---------------------------------------------------------ENGLISH VERSION---------------------------------------------------------------*/
-/*
- *## 🚧 Update V1.1
- *
- * Function `find_info` in the works
- * New features in coming depending on the tests
- * Function `delete_file`: was deleting the file even when saying no
- * Optimization of empty spaces
- * */
