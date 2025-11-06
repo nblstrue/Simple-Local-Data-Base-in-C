@@ -26,8 +26,11 @@ Un programme simple en **C** pour gérer des informations personnelles (prénom,
 ### Update V1.1 - Overhaul of the Project - 2nd edition (December 2025)
 
 * (IMPORTANT) Export a csv file at the end of the program and, throughout the program, export a bin file to store the data efficiently
-              -> To have a user friendly version of the database for user;
+
+              -> To have a user friendly version of the database for user
+  
               -> To have a efficient/fast way to load data
+
 * Be able to edit a person's informations
 * Be able to delete one specific person
 * Be able to show the data by parameters (income, weight, height, etc)
