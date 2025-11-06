@@ -1,8 +1,6 @@
-# 📇 Contact Manager / 📋 Gestionnaire de Contacts en C
+# 📇 Contact Manager
 
 A simple **C** program to manage personal information (first name, last name, age, job, phone number, and email). Data is stored in a text file (`saveInfos.txt`) and can be added, displayed, or deleted.
-
-Un programme simple en **C** pour gérer des informations personnelles (prénom, nom, âge, métier, numéro et email). Les données sont stockées dans un fichier texte (`saveInfos.txt`) et peuvent être ajoutées, affichées ou supprimées.
 
 ---
 
