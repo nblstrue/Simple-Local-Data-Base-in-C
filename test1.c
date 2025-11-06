@@ -1,17 +1,3 @@
-/*---------------------------------------------------------VERSION FRANCAISE---------------------------------------------------------------*/
-/*
- * ## Update V1.2 - Overhaul of the Project (December 2025)
- *
- * Will be using a struct array to store people in memory before writing them to the file
- * Overhaul of all the functions
- *  * recup_infos (adding Income, weight, height, job title, address)
- *  * send_infos (last function sending the full content of TABLE_PERSONS to the file)
- *  * show_infos (displaying all the content of TABLE_PERSONS in the console)
- *  * find_info (searching for a person in TABLE_PERSONS by any of their information)
- *  * delete_data (erasing all the content of the struct array and the file content)
- * Quality of life updates (updating ways of coding, small errors)
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
