@@ -17,11 +17,11 @@ A simple **C** program to manage personal information (first name, last name, ag
 
 * (done) Function `find_info` in the works (bool type used in the wrong way)
 
-### Update V1.0.3 - Rearrange it (November 2025)
+### Update V1.0.3 - Rearrange it (December 2025 - January 2026)
 
 * Will be using a struct array to store people in memory before writing them to the file (for every function)
 
-### Update V1.1 - Overhaul of the Project - 2nd edition (December 2025)
+### Update V1.1 - Overhaul of the Project - 2nd edition (December 2025 -> February 2026)
 
 * (IMPORTANT) Export a csv file at the end of the program and, throughout the program, export a bin file to store the data efficiently
   * To have a user friendly version of the database for user
