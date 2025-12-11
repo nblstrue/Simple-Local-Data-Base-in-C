@@ -17,11 +17,11 @@ A simple **C** program to manage personal information (first name, last name, ag
 
 * (done) Function `find_info` in the works (bool type used in the wrong way)
 
-### Update V1.0.3 - Rearrange it (December 2025 - January 2026)
+### Update V1.0.3 - Rearrange it
 
 * Will be using a struct array to store people in memory before writing them to the file (for every function)
 
-### Update V1.1 - Overhaul of the Project - 2nd edition (December 2025 -> February 2026)
+### Update V1.1 - Overhaul of the Project - 2nd edition
 
 * (IMPORTANT) Export a csv file at the end of the program and, throughout the program, export a bin file to store the data efficiently
   * To have a user friendly version of the database for user
@@ -31,7 +31,7 @@ A simple **C** program to manage personal information (first name, last name, ag
 * Be able to show the data by parameters (income, weight, height, etc)
 * Be able to verify the format of the data: emails with '@', phone numbers with actually numbers (based on french phone numbers), forces float arguments to only have two decimals
 
-### Update V2 - A Cool Local Interface (January 2026)
+### Update V2 - A Cool Local Interface
 
 * Using Raylib 5.0 to completely change the looks for the project
 
